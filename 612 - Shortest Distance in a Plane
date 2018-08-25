@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+
+select round(min(distance),2) as shortest
+from 
+(select sqrt(power(t1.x - t2.x,2)+power(t1.y - t2.y,2)) as distance
+from point_2d as t1
+join point_2d as t2
+on t1.x!=t2.x or t1.y!=t2.y) t3
